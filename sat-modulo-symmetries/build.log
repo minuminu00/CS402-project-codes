@@ -1,0 +1,164 @@
+
+--SMS-- build-and-install.sh: Build type set to RELEASE
+
+
+--SMS-- build-and-install.sh: Building CaDiCaL
+
+make -C "/root/sat-modulo-symmetries/cadical_sms/build"
+make[1]: Entering directory '/root/sat-modulo-symmetries/cadical_sms/build'
+../scripts/make-build-header.sh > build.hpp
+g++ -Wall -Wextra -O3 -DNDEBUG -fPIC -I../build -I../src -c ../src/version.cpp
+ar rc libcadical.a analyze.o arena.o assume.o averages.o backtrack.o backward.o bins.o block.o ccadical.o checker.o clause.o collect.o compact.o condition.o config.o constrain.o contract.o cover.o decide.o decompose.o deduplicate.o drattracer.o elim.o ema.o extend.o external.o external_propagate.o file.o flags.o flip.o format.o frattracer.o gates.o idruptracer.o instantiate.o internal.o ipasir.o lidruptracer.o limit.o logging.o lookahead.o lratbuilder.o lratchecker.o lrattracer.o lucky.o message.o minimize.o occs.o options.o parse.o phases.o probe.o profile.o proof.o propagate.o queue.o random.o reap.o reduce.o rephase.o report.o resources.o restart.o restore.o score.o shrink.o signal.o solution.o solver.o stats.o subsume.o terminal.o ternary.o transred.o util.o var.o veripbtracer.o version.o vivify.o walk.o watch.o craigtracer.o
+g++ -Wall -Wextra -O3 -DNDEBUG -fPIC -I../build -I../src -o cadical cadical.o -L. -lcadical 
+g++ -Wall -Wextra -O3 -DNDEBUG -fPIC -I../build -I../src -o mobical mobical.o -L. -lcadical
+make[1]: Leaving directory '/root/sat-modulo-symmetries/cadical_sms/build'
+
+--SMS-- build-and-install.sh: Building without the Glasgow Subgraph Solver
+
+
+--SMS-- build-and-install.sh: Configuring SMS build directory...
+
+-- The C compiler identification is GNU 13.3.0
+-- The CXX compiler identification is GNU 13.3.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Building without the Glasgow Subgraph Solver
+-- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.83.0/BoostConfig.cmake (found suitable version "1.83.0", minimum required is "1.74.0") found components: program_options graph 
+Graph propagators: /root/sat-modulo-symmetries/src/graphPropagators/coloring.cpp;/root/sat-modulo-symmetries/src/graphPropagators/coloringCheck.cpp;/root/sat-modulo-symmetries/src/graphPropagators/connectedChecker.cpp;/root/sat-modulo-symmetries/src/graphPropagators/decomposabilityCheck.cpp;/root/sat-modulo-symmetries/src/graphPropagators/domination.cpp;/root/sat-modulo-symmetries/src/graphPropagators/efx.cpp;/root/sat-modulo-symmetries/src/graphPropagators/graphUtilities.cpp;/root/sat-modulo-symmetries/src/graphPropagators/planarity.cpp;/root/sat-modulo-symmetries/src/graphPropagators/subgraphIsomorphism.cpp
+CaDiCaL found at /root/sat-modulo-symmetries/cadical_sms/build/libcadical.a
+-- Configuring done (0.3s)
+-- Generating done (0.0s)
+-- Build files have been written to: /root/sat-modulo-symmetries/build
+
+--SMS-- build-and-install.sh: building SMS
+
+[  9%] Building CXX object src/CMakeFiles/sms_static.dir/sms.cpp.o
+[  6%] Building CXX object src/CMakeFiles/sms.dir/sms.cpp.o
+[  9%] Building CXX object src/CMakeFiles/sms.dir/graph.cpp.o
+[ 11%] Building CXX object src/CMakeFiles/sms_static.dir/minimalityCheckCommon.cpp.o
+[ 13%] Building CXX object src/CMakeFiles/sms_static.dir/useful.cpp.o
+[ 13%] Building CXX object src/CMakeFiles/sms.dir/minimalityCheckCommon.cpp.o
+[ 15%] Building CXX object src/CMakeFiles/sms.dir/useful.cpp.o
+[ 18%] Building CXX object src/CMakeFiles/sms_static.dir/graph.cpp.o
+[ 20%] Building CXX object src/CMakeFiles/sms.dir/options.cpp.o
+[ 22%] Building CXX object src/CMakeFiles/sms_static.dir/options.cpp.o
+[ 25%] Building CXX object src/CMakeFiles/sms_static.dir/minimalityCheck.cpp.o
+[ 27%] Building CXX object src/CMakeFiles/sms.dir/minimalityCheck.cpp.o
+[ 29%] Building CXX object src/CMakeFiles/sms.dir/minimalityCheck_dir.cpp.o
+[ 31%] Building CXX object src/CMakeFiles/sms_static.dir/minimalityCheck_dir.cpp.o
+[ 34%] Building CXX object src/CMakeFiles/sms.dir/cubing.cpp.o
+[ 36%] Building CXX object src/CMakeFiles/sms_static.dir/cubing.cpp.o
+[ 38%] Building CXX object src/CMakeFiles/sms.dir/qbf/universal.cpp.o
+[ 40%] Building CXX object src/CMakeFiles/sms_static.dir/qbf/universal.cpp.o
+[ 43%] Building CXX object src/CMakeFiles/sms_static.dir/qbf/universal2.cpp.o
+[ 45%] Building CXX object src/CMakeFiles/sms.dir/qbf/universal2.cpp.o
+[ 47%] Building CXX object src/CMakeFiles/sms_static.dir/qbf/qcirParser.cpp.o
+[ 50%] Building CXX object src/CMakeFiles/sms.dir/qbf/qcirParser.cpp.o
+[ 52%] Building CXX object src/CMakeFiles/sms.dir/graphPropagators/coloring.cpp.o
+[ 54%] Building CXX object src/CMakeFiles/sms_static.dir/graphPropagators/coloring.cpp.o
+[ 56%] Building CXX object src/CMakeFiles/sms_static.dir/graphPropagators/coloringCheck.cpp.o
+[ 59%] Building CXX object src/CMakeFiles/sms.dir/graphPropagators/coloringCheck.cpp.o
+[ 61%] Building CXX object src/CMakeFiles/sms.dir/graphPropagators/connectedChecker.cpp.o
+[ 63%] Building CXX object src/CMakeFiles/sms.dir/graphPropagators/decomposabilityCheck.cpp.o
+[ 65%] Building CXX object src/CMakeFiles/sms_static.dir/graphPropagators/connectedChecker.cpp.o
+[ 68%] Building CXX object src/CMakeFiles/sms_static.dir/graphPropagators/decomposabilityCheck.cpp.o
+[ 70%] Building CXX object src/CMakeFiles/sms_static.dir/graphPropagators/domination.cpp.o
+[ 72%] Building CXX object src/CMakeFiles/sms.dir/graphPropagators/domination.cpp.o
+[ 75%] Building CXX object src/CMakeFiles/sms.dir/graphPropagators/efx.cpp.o
+[ 77%] Building CXX object src/CMakeFiles/sms_static.dir/graphPropagators/efx.cpp.o
+[ 79%] Building CXX object src/CMakeFiles/sms_static.dir/graphPropagators/graphUtilities.cpp.o
+[ 81%] Building CXX object src/CMakeFiles/sms.dir/graphPropagators/graphUtilities.cpp.o
+[ 84%] Building CXX object src/CMakeFiles/sms.dir/graphPropagators/planarity.cpp.o
+[ 86%] Building CXX object src/CMakeFiles/sms_static.dir/graphPropagators/planarity.cpp.o
+[ 88%] Building CXX object src/CMakeFiles/sms_static.dir/graphPropagators/subgraphIsomorphism.cpp.o
+[ 90%] Building CXX object src/CMakeFiles/sms.dir/graphPropagators/subgraphIsomorphism.cpp.o
+In file included from /usr/include/c++/13/bits/stl_algobase.h:67,
+                 from /usr/include/c++/13/vector:62,
+                 from /usr/include/boost/graph/planar_detail/boyer_myrvold_impl.hpp:11,
+                 from /usr/include/boost/graph/boyer_myrvold_planar_test.hpp:12,
+                 from /root/sat-modulo-symmetries/src/graphPropagators/planarity.cpp:1:
+In member function 'constexpr __gnu_cxx::__normal_iterator<_Iterator, _Container> __gnu_cxx::__normal_iterator<_Iterator, _Container>::operator+(difference_type) const [with _Iterator = long unsigned int*; _Container = std::vector<long unsigned int, std::allocator<long unsigned int> >]',
+    inlined from 'R boost::iterator_property_map<RandomAccessIterator, IndexMap, T, R>::operator[](key_type) const [with RandomAccessIterator = __gnu_cxx::__normal_iterator<long unsigned int*, std::vector<long unsigned int, std::allocator<long unsigned int> > >; IndexMap = boost::vec_adj_list_vertex_id_map<boost::property<boost::vertex_index_t, int>, long unsigned int>; T = long unsigned int; R = long unsigned int&]' at /usr/include/boost/property_map/property_map.hpp:341:59,
+    inlined from 'void boost::boyer_myrvold_impl<Graph, VertexIndexMap, StoreOldHandlesPolicy, StoreEmbeddingPolicy>::extract_kuratowski_subgraph(OutputIterator, EdgeIndexMap) [with OutputIterator = std::back_insert_iterator<std::vector<boost::detail::edge_desc_impl<boost::undirected_tag, long unsigned int> > >; EdgeIndexMap = boost::adj_list_edge_property_map<boost::undirected_tag, int, const int&, long unsigned int, const boost::property<boost::edge_index_t, int>, boost::edge_index_t>; Graph = boost::adjacency_list<boost::vecS, boost::vecS, boost::undirectedS, boost::property<boost::vertex_index_t, int>, boost::property<boost::edge_index_t, int> >; VertexIndexMap = boost::vec_adj_list_vertex_id_map<boost::property<boost::vertex_index_t, int>, long unsigned int>; StoreOldHandlesPolicy = boost::graph::detail::store_old_handles; StoreEmbeddingPolicy = boost::graph::detail::no_embedding]' at /usr/include/boost/graph/planar_detail/boyer_myrvold_impl.hpp:1162:52:
+/usr/include/c++/13/bits/stl_iterator.h:1148:45: warning: 'previous_vertex' may be used uninitialized [-Wmaybe-uninitialized]
+ 1148 |       { return __normal_iterator(_M_current + __n); }
+      |                                  ~~~~~~~~~~~^~~~~
+/usr/include/boost/graph/planar_detail/boyer_myrvold_impl.hpp: In member function 'void boost::boyer_myrvold_impl<Graph, VertexIndexMap, StoreOldHandlesPolicy, StoreEmbeddingPolicy>::extract_kuratowski_subgraph(OutputIterator, EdgeIndexMap) [with OutputIterator = std::back_insert_iterator<std::vector<boost::detail::edge_desc_impl<boost::undirected_tag, long unsigned int> > >; EdgeIndexMap = boost::adj_list_edge_property_map<boost::undirected_tag, int, const int&, long unsigned int, const boost::property<boost::edge_index_t, int>, boost::edge_index_t>; Graph = boost::adjacency_list<boost::vecS, boost::vecS, boost::undirectedS, boost::property<boost::vertex_index_t, int>, boost::property<boost::edge_index_t, int> >; VertexIndexMap = boost::vec_adj_list_vertex_id_map<boost::property<boost::vertex_index_t, int>, long unsigned int>; StoreOldHandlesPolicy = boost::graph::detail::store_old_handles; StoreEmbeddingPolicy = boost::graph::detail::no_embedding]':
+/usr/include/boost/graph/planar_detail/boyer_myrvold_impl.hpp:1153:18: note: 'previous_vertex' was declared here
+ 1153 |         vertex_t previous_vertex;
+      |                  ^~~~~~~~~~~~~~~
+In member function 'constexpr __gnu_cxx::__normal_iterator<_Iterator, _Container> __gnu_cxx::__normal_iterator<_Iterator, _Container>::operator+(difference_type) const [with _Iterator = boost::detail::edge_desc_impl<boost::undirected_tag, long unsigned int>*; _Container = std::vector<boost::detail::edge_desc_impl<boost::undirected_tag, long unsigned int> >]',
+    inlined from 'R boost::iterator_property_map<RandomAccessIterator, IndexMap, T, R>::operator[](key_type) const [with RandomAccessIterator = __gnu_cxx::__normal_iterator<boost::detail::edge_desc_impl<boost::undirected_tag, long unsigned int>*, std::vector<boost::detail::edge_desc_impl<boost::undirected_tag, long unsigned int> > >; IndexMap = boost::vec_adj_list_vertex_id_map<boost::property<boost::vertex_index_t, int>, long unsigned int>; T = boost::detail::edge_desc_impl<boost::undirected_tag, long unsigned int>; R = boost::detail::edge_desc_impl<boost::undirected_tag, long unsigned int>&]' at /usr/include/boost/property_map/property_map.hpp:341:59,
+    inlined from 'void boost::boyer_myrvold_impl<Graph, VertexIndexMap, StoreOldHandlesPolicy, StoreEmbeddingPolicy>::extract_kuratowski_subgraph(OutputIterator, EdgeIndexMap) [with OutputIterator = std::back_insert_iterator<std::vector<boost::detail::edge_desc_impl<boost::undirected_tag, long unsigned int> > >; EdgeIndexMap = boost::adj_list_edge_property_map<boost::undirected_tag, int, const int&, long unsigned int, const boost::property<boost::edge_index_t, int>, boost::edge_index_t>; Graph = boost::adjacency_list<boost::vecS, boost::vecS, boost::undirectedS, boost::property<boost::vertex_index_t, int>, boost::property<boost::edge_index_t, int> >; VertexIndexMap = boost::vec_adj_list_vertex_id_map<boost::property<boost::vertex_index_t, int>, long unsigned int>; StoreOldHandlesPolicy = boost::graph::detail::store_old_handles; StoreEmbeddingPolicy = boost::graph::detail::no_embedding]' at /usr/include/boost/graph/planar_detail/boyer_myrvold_impl.hpp:1618:43:
+/usr/include/c++/13/bits/stl_iterator.h:1148:45: warning: 'bicomp_root' may be used uninitialized [-Wmaybe-uninitialized]
+ 1148 |       { return __normal_iterator(_M_current + __n); }
+      |                                  ~~~~~~~~~~~^~~~~
+/usr/include/boost/graph/planar_detail/boyer_myrvold_impl.hpp: In member function 'void boost::boyer_myrvold_impl<Graph, VertexIndexMap, StoreOldHandlesPolicy, StoreEmbeddingPolicy>::extract_kuratowski_subgraph(OutputIterator, EdgeIndexMap) [with OutputIterator = std::back_insert_iterator<std::vector<boost::detail::edge_desc_impl<boost::undirected_tag, long unsigned int> > >; EdgeIndexMap = boost::adj_list_edge_property_map<boost::undirected_tag, int, const int&, long unsigned int, const boost::property<boost::edge_index_t, int>, boost::edge_index_t>; Graph = boost::adjacency_list<boost::vecS, boost::vecS, boost::undirectedS, boost::property<boost::vertex_index_t, int>, boost::property<boost::edge_index_t, int> >; VertexIndexMap = boost::vec_adj_list_vertex_id_map<boost::property<boost::vertex_index_t, int>, long unsigned int>; StoreOldHandlesPolicy = boost::graph::detail::store_old_handles; StoreEmbeddingPolicy = boost::graph::detail::no_embedding]':
+/usr/include/boost/graph/planar_detail/boyer_myrvold_impl.hpp:1111:18: note: 'bicomp_root' was declared here
+ 1111 |         vertex_t bicomp_root;
+      |                  ^~~~~~~~~~~
+In file included from /usr/include/c++/13/bits/stl_algobase.h:67,
+                 from /usr/include/c++/13/vector:62,
+                 from /usr/include/boost/graph/planar_detail/boyer_myrvold_impl.hpp:11,
+                 from /usr/include/boost/graph/boyer_myrvold_planar_test.hpp:12,
+                 from /root/sat-modulo-symmetries/src/graphPropagators/planarity.cpp:1:
+In member function 'constexpr __gnu_cxx::__normal_iterator<_Iterator, _Container> __gnu_cxx::__normal_iterator<_Iterator, _Container>::operator+(difference_type) const [with _Iterator = long unsigned int*; _Container = std::vector<long unsigned int, std::allocator<long unsigned int> >]',
+    inlined from 'R boost::iterator_property_map<RandomAccessIterator, IndexMap, T, R>::operator[](key_type) const [with RandomAccessIterator = __gnu_cxx::__normal_iterator<long unsigned int*, std::vector<long unsigned int, std::allocator<long unsigned int> > >; IndexMap = boost::vec_adj_list_vertex_id_map<boost::property<boost::vertex_index_t, int>, long unsigned int>; T = long unsigned int; R = long unsigned int&]' at /usr/include/boost/property_map/property_map.hpp:341:59,
+    inlined from 'void boost::boyer_myrvold_impl<Graph, VertexIndexMap, StoreOldHandlesPolicy, StoreEmbeddingPolicy>::extract_kuratowski_subgraph(OutputIterator, EdgeIndexMap) [with OutputIterator = std::back_insert_iterator<std::vector<boost::detail::edge_desc_impl<boost::undirected_tag, long unsigned int> > >; EdgeIndexMap = boost::adj_list_edge_property_map<boost::undirected_tag, int, const int&, long unsigned int, const boost::property<boost::edge_index_t, int>, boost::edge_index_t>; Graph = boost::adjacency_list<boost::vecS, boost::vecS, boost::undirectedS, boost::property<boost::vertex_index_t, int>, boost::property<boost::edge_index_t, int> >; VertexIndexMap = boost::vec_adj_list_vertex_id_map<boost::property<boost::vertex_index_t, int>, long unsigned int>; StoreOldHandlesPolicy = boost::graph::detail::store_old_handles; StoreEmbeddingPolicy = boost::graph::detail::no_embedding]' at /usr/include/boost/graph/planar_detail/boyer_myrvold_impl.hpp:1162:52:
+/usr/include/c++/13/bits/stl_iterator.h:1148:45: warning: 'previous_vertex' may be used uninitialized [-Wmaybe-uninitialized]
+ 1148 |       { return __normal_iterator(_M_current + __n); }
+      |                                  ~~~~~~~~~~~^~~~~
+/usr/include/boost/graph/planar_detail/boyer_myrvold_impl.hpp: In member function 'void boost::boyer_myrvold_impl<Graph, VertexIndexMap, StoreOldHandlesPolicy, StoreEmbeddingPolicy>::extract_kuratowski_subgraph(OutputIterator, EdgeIndexMap) [with OutputIterator = std::back_insert_iterator<std::vector<boost::detail::edge_desc_impl<boost::undirected_tag, long unsigned int> > >; EdgeIndexMap = boost::adj_list_edge_property_map<boost::undirected_tag, int, const int&, long unsigned int, const boost::property<boost::edge_index_t, int>, boost::edge_index_t>; Graph = boost::adjacency_list<boost::vecS, boost::vecS, boost::undirectedS, boost::property<boost::vertex_index_t, int>, boost::property<boost::edge_index_t, int> >; VertexIndexMap = boost::vec_adj_list_vertex_id_map<boost::property<boost::vertex_index_t, int>, long unsigned int>; StoreOldHandlesPolicy = boost::graph::detail::store_old_handles; StoreEmbeddingPolicy = boost::graph::detail::no_embedding]':
+/usr/include/boost/graph/planar_detail/boyer_myrvold_impl.hpp:1153:18: note: 'previous_vertex' was declared here
+ 1153 |         vertex_t previous_vertex;
+      |                  ^~~~~~~~~~~~~~~
+In member function 'constexpr __gnu_cxx::__normal_iterator<_Iterator, _Container> __gnu_cxx::__normal_iterator<_Iterator, _Container>::operator+(difference_type) const [with _Iterator = boost::detail::edge_desc_impl<boost::undirected_tag, long unsigned int>*; _Container = std::vector<boost::detail::edge_desc_impl<boost::undirected_tag, long unsigned int> >]',
+    inlined from 'R boost::iterator_property_map<RandomAccessIterator, IndexMap, T, R>::operator[](key_type) const [with RandomAccessIterator = __gnu_cxx::__normal_iterator<boost::detail::edge_desc_impl<boost::undirected_tag, long unsigned int>*, std::vector<boost::detail::edge_desc_impl<boost::undirected_tag, long unsigned int> > >; IndexMap = boost::vec_adj_list_vertex_id_map<boost::property<boost::vertex_index_t, int>, long unsigned int>; T = boost::detail::edge_desc_impl<boost::undirected_tag, long unsigned int>; R = boost::detail::edge_desc_impl<boost::undirected_tag, long unsigned int>&]' at /usr/include/boost/property_map/property_map.hpp:341:59,
+    inlined from 'void boost::boyer_myrvold_impl<Graph, VertexIndexMap, StoreOldHandlesPolicy, StoreEmbeddingPolicy>::extract_kuratowski_subgraph(OutputIterator, EdgeIndexMap) [with OutputIterator = std::back_insert_iterator<std::vector<boost::detail::edge_desc_impl<boost::undirected_tag, long unsigned int> > >; EdgeIndexMap = boost::adj_list_edge_property_map<boost::undirected_tag, int, const int&, long unsigned int, const boost::property<boost::edge_index_t, int>, boost::edge_index_t>; Graph = boost::adjacency_list<boost::vecS, boost::vecS, boost::undirectedS, boost::property<boost::vertex_index_t, int>, boost::property<boost::edge_index_t, int> >; VertexIndexMap = boost::vec_adj_list_vertex_id_map<boost::property<boost::vertex_index_t, int>, long unsigned int>; StoreOldHandlesPolicy = boost::graph::detail::store_old_handles; StoreEmbeddingPolicy = boost::graph::detail::no_embedding]' at /usr/include/boost/graph/planar_detail/boyer_myrvold_impl.hpp:1618:43:
+/usr/include/c++/13/bits/stl_iterator.h:1148:45: warning: 'bicomp_root' may be used uninitialized [-Wmaybe-uninitialized]
+ 1148 |       { return __normal_iterator(_M_current + __n); }
+      |                                  ~~~~~~~~~~~^~~~~
+/usr/include/boost/graph/planar_detail/boyer_myrvold_impl.hpp: In member function 'void boost::boyer_myrvold_impl<Graph, VertexIndexMap, StoreOldHandlesPolicy, StoreEmbeddingPolicy>::extract_kuratowski_subgraph(OutputIterator, EdgeIndexMap) [with OutputIterator = std::back_insert_iterator<std::vector<boost::detail::edge_desc_impl<boost::undirected_tag, long unsigned int> > >; EdgeIndexMap = boost::adj_list_edge_property_map<boost::undirected_tag, int, const int&, long unsigned int, const boost::property<boost::edge_index_t, int>, boost::edge_index_t>; Graph = boost::adjacency_list<boost::vecS, boost::vecS, boost::undirectedS, boost::property<boost::vertex_index_t, int>, boost::property<boost::edge_index_t, int> >; VertexIndexMap = boost::vec_adj_list_vertex_id_map<boost::property<boost::vertex_index_t, int>, long unsigned int>; StoreOldHandlesPolicy = boost::graph::detail::store_old_handles; StoreEmbeddingPolicy = boost::graph::detail::no_embedding]':
+/usr/include/boost/graph/planar_detail/boyer_myrvold_impl.hpp:1111:18: note: 'bicomp_root' was declared here
+ 1111 |         vertex_t bicomp_root;
+      |                  ^~~~~~~~~~~
+[ 93%] Linking CXX shared library libsms.so
+[ 93%] Built target sms
+[ 95%] Linking CXX static library libsms.a
+[ 95%] Built target sms_static
+[ 97%] Building CXX object src/CMakeFiles/smsg.dir/main.cpp.o
+[100%] Linking CXX executable smsg
+[100%] Built target smsg
+
+--SMS-- build-and-install.sh: SMS built successfully
+
+
+--SMS-- build-and-install.sh: installing SMS binaries
+
+./build-and-install.sh: line 146: sudo: command not found
+
+--SMS-- build-and-install.sh: installing PySMS
+
+Processing /root/sat-modulo-symmetries
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'done'
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Building wheels for collected packages: sms-graph-builder
+  Building wheel for sms-graph-builder (pyproject.toml): started
+  Building wheel for sms-graph-builder (pyproject.toml): finished with status 'done'
+  Created wheel for sms-graph-builder: filename=sms_graph_builder-2024.11-py3-none-any.whl size=30930 sha256=9715bfb55c6edc8ef5c508c4fa4e274dc665a0df046fecf5200b63702b45d606
+  Stored in directory: /root/.cache/pip/wheels/04/b0/16/d36e424c5537a1e5596e9f58b52cb9d8a3185cb3f67b90cf4d
+Successfully built sms-graph-builder
+Installing collected packages: sms-graph-builder
+Successfully installed sms-graph-builder-2024.11

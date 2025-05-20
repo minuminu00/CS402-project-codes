@@ -1,0 +1,1 @@
+/usr/bin/c++ -O3 -DNDEBUG CMakeFiles/smsg.dir/main.cpp.o -o smsg  /root/sat-modulo-symmetries/cadical_sms/build/libcadical.a libsms.a /usr/lib/x86_64-linux-gnu/libboost_program_options.so.1.83.0 /usr/lib/x86_64-linux-gnu/libboost_graph.so.1.83.0 /usr/lib/x86_64-linux-gnu/libboost_regex.so.1.83.0 /root/sat-modulo-symmetries/cadical_sms/build/libcadical.a 
