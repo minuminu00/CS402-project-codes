@@ -131,9 +131,11 @@ bool dominate(vector<int> &stair1, vector<int> &stair2){
 int main(void){
     int S = 4;
     for(int K=3; ; K++){
+        K = 4;
         clock_t start_time, end_time, start_time_, end_time_;
         start_time = clock();
         for( ; ; S++){
+            S = 5;
             start_time_ = clock();
             printf("TRYING: %d %d\n", K, S);
             bool unsat = false;
@@ -147,6 +149,11 @@ int main(void){
                 auto front = Q.front();
                 vector<int> currStair = front.first;
                 Q.pop();
+                printf("ELEMENT FROM QUEUE\n");
+                for(int x: currStair){
+                    printf("%d ", x);
+                }
+                printf("\n");
                 int currIdx = A.size();
                 A.push_back(front);
                 validIdx.push_back(true);
@@ -169,6 +176,21 @@ int main(void){
                         }
                         vector<int> newStair = rule(S, currStair, otherStair);
                         if(newStair.size() < S && !visited.find(newStair, 0)){
+                            printf("(1) ");
+                            for(int x: currStair){
+                                printf("%d ", x);
+                            }
+                            printf("\n");
+                            printf("(2) ");
+                            for(int x: otherStair){
+                                printf("%d ", x);
+                            }
+                            printf("\n");
+                            printf("(3) ");
+                            for(int x: newStair){
+                                printf("%d ", x);
+                            }
+                            printf("\n");
                             visited.insert(newStair, 0);
                             Q.push({newStair, {i, currIdx}});
                         }
@@ -177,7 +199,8 @@ int main(void){
             }
             end_time_ = clock();
             printf("Elapsed time: %.2lf seconds\n", (double)(end_time_-start_time_) / CLOCKS_PER_SEC);
-
+            
+            unsat = false;
             if(unsat){
                 end_time = clock();
                 char filename[30];
@@ -214,7 +237,9 @@ int main(void){
                 fclose(fp);
                 break;
             }
+            break;
         }
+        break;
     }
 
 }
